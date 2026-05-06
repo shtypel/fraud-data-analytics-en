@@ -70,7 +70,7 @@ An external actor gains access to a dormant account and initiates transactions a
 
 ---
 
-## Technologies Used
+## Tools
 
 - SQL (MySQL)  
 - Transaction Data Analysis  

@@ -12,6 +12,19 @@ The project demonstrates how a theoretical fraud detection methodology can be tr
 
 ---
 
+## Project Contents
+
+- Bank transactions dataset:  
+`./bank_transactions_data.csv`
+
+- Methodology and analytical report:  
+`./fraud-data-analytics.pdf`
+
+- SQL analytical tests and detection logic:  
+`./fraud-data-analytics.sql`
+
+---
+
 ## Objective
 
 Determine whether bank accounts demonstrate behavioural patterns consistent with fraud scenarios involving unauthorized access and fund extraction.

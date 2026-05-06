@@ -1,170 +1,108 @@
-# Fraud Data Analytics: Unauthorized Account Usage Detection
+# Fraud Analysis in Banking Transactions
 
 ## Project Description
 
-This project applies a scenario-driven fraud analytics methodology to identify patterns associated with unauthorized use of customer financial accounts.
+This project implements a **scenario-driven fraud detection approach** (Fraud Data Analytics Methodology) using banking transaction data.
 
-The analysis focuses on detecting behavioural and transactional anomalies linked to:
-- account takeover activity
-- rapid transaction execution
-- transaction fragmentation
-- dormant account reactivation
+The objective of the analysis is to identify transactional patterns associated with **unauthorized use of customer accounts**, including:
+- active account takeover
+- exploitation of dormant accounts
 
-The project combines fraud risk assessment methodology with SQL-based data interrogation techniques to identify potentially suspicious account behaviour.
+The project demonstrates how a theoretical fraud detection methodology can be translated into a **practical SQL-based analytical testing framework**.
 
 ---
 
-# Project Objectives
+## Objective
 
-- Detect patterns consistent with unauthorized account usage
-- Identify high-risk transactional behaviour
-- Apply scenario-driven fraud analytics methodology
-- Develop reusable SQL-based fraud detection logic
-- Demonstrate data-driven fraud investigation techniques
+Determine whether bank accounts demonstrate behavioural patterns consistent with fraud scenarios involving unauthorized access and fund extraction.
+
+> Important: the purpose of the project is not to prove fraud, but to **identify transactions with elevated risk indicators**.
 
 ---
 
-# Dataset
+## Methodology
 
-The project uses a simulated banking transaction dataset from Kaggle.
+The project follows a **scenario-driven approach**:
 
-- Dataset source:  
-https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022
+1. Define a fraud scenario  
+2. Identify concealment strategies  
+3. Develop risk indicators (*red flags*)  
+4. Translate indicators into SQL-based analytical tests  
 
-- Data includes:
-  - transaction activity
-  - account identifiers
-  - transaction timestamps
-  - device and merchant information
-  - login attempts
-  - transaction amounts
-
----
-
-# Fraud Scenario Framework
-
-The project follows a scenario-driven fraud analytics approach.
-
-## Inherent Fraud Scheme
-
-Unauthorized control and use of customer financial accounts resulting in misappropriation of funds.
+The analysis is built not from the data itself, but from the **underlying logic of how fraud is committed**.
 
 ---
 
 ## Fraud Scenarios
 
-### Scenario 1 — Account Takeover & Rapid Fund Extraction
+### Scenario 1 — Active Account Takeover
 
-Detection logic focused on identifying:
-- unusually high transaction frequency
-- abnormal daily transaction amounts
-- fragmented transaction behaviour
-- rapid transaction execution patterns
+An external actor gains access to an active customer account and performs multiple transactions within a short period of time to rapidly extract funds.
 
----
-
-### Scenario 2 — Dormant Account Reactivation
-
-Detection logic focused on identifying:
-- long periods of account inactivity
-- sudden transaction reactivation
-- deviations from historical account behaviour
+**Key indicators:**
+- elevated transaction frequency  
+- unusually high cumulative transaction volume  
+- transaction fragmentation across multiple operations  
 
 ---
 
-# Data Analytics Approach
+### Scenario 2 — Dormant Account Exploitation
 
-The analysis included:
-- data quality assessment
-- transaction pattern analysis
-- behavioural baseline creation
-- anomaly identification
-- cumulative fraud flag analysis
+An external actor gains access to a dormant account and initiates transactions after a prolonged period of inactivity.
 
-SQL interrogation techniques included:
-- Common Table Expressions (CTEs)
-- Window Functions (`LAG`, `AVG`)
-- Behavioural baselines
-- Temporal analysis
-- Ratio analysis
-- Risk flag generation
+**Key indicators:**
+- long gaps between transactions  
+- reactivation following prolonged inactivity  
+- elevated login attempt counts  
 
 ---
 
-# Key Detection Indicators
+## Technologies Used
 
-The project identified several behavioural indicators associated with potentially suspicious activity:
-
-- abnormal transaction frequency
-- unusually high transaction values
-- fragmented transaction patterns
-- deviations from historical activity
-- extended account dormancy followed by reactivation
-- elevated login attempt counts
+- SQL (MySQL)  
+- Transaction Data Analysis  
+- Fraud Data Analytics Methodology  
 
 ---
 
-# Technologies Used
+## Data
 
-- SQL (MySQL)
-- MySQL Workbench
-- Fraud Analytics Methodology
-- Behavioural Analysis
-- Data Interrogation Techniques
+The project uses the public dataset:
 
----
+[Bank Transactions Dataset for Fraud Detection (Kaggle)](https://www.kaggle.com/datasets/thuandao/bank-transactions-dataset-for-fraud-detection)
 
-# Project Structure
-
-```text
-fraud-data-analytics/
-│
-├── sql/
-│   ├── scenario1_account_takeover.sql
-│   ├── scenario2_dormant_accounts.sql
-│   └── data_quality_checks.sql
-│
-├── report/
-│   └── fraud_data_analytics_report.pdf
-│
-├── data/
-│   └── bank_transactions.csv
-│
-└── README.md
-```
+- ~50,000 transactions  
+- simulated banking activity  
+- includes transaction, device, IP, and login attempt data  
 
 ---
 
-# Key Outcomes
+## Analytical Logic
 
-- Applied scenario-driven fraud analytics methodology
-- Developed SQL-based fraud detection logic
-- Built behavioural baselines for anomaly detection
-- Identified suspicious transaction and dormancy patterns
-- Demonstrated practical fraud investigation techniques using SQL
+For each scenario:
 
----
+- a behavioural baseline is established for each account  
+- baseline metrics are calculated (averages, frequency, intervals)  
+- SQL-based analytical tests are applied to identify deviations from expected behaviour  
 
-# Business Relevance
-
-This project demonstrates how SQL-based fraud analytics can support:
-- transaction monitoring
-- fraud investigations
-- behavioural anomaly detection
-- account takeover detection
-- risk-based alert generation
-- financial crime analytics
-
-The analytical approach reflects practical fraud detection workflows used in banking and financial crime environments.
+A cumulative **risk score** is then generated based on identified indicators.
 
 ---
 
-# Future Improvements
+## Cumulative Analysis
 
-Potential future enhancements include:
-- risk scoring framework
-- cross-account behavioural analysis
-- device and IP clustering
-- machine learning-based anomaly detection
-- real-time fraud monitoring
-- dashboard visualisation
+Transactions are assessed based on combinations of risk indicators.
+
+Particular attention is given to cases where:
+- a transaction matches multiple fraud scenarios simultaneously  
+- behavioural and temporal anomalies occur together  
+
+Such combinations are considered the strongest indicators of potentially suspicious activity.
+
+---
+
+## Limitations
+
+- absence of confirmed fraud labels  
+- partial absence of precise transaction timestamps  
+- dataset is simulated rather than real-world  

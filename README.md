@@ -16,7 +16,7 @@ The project demonstrates how a theoretical fraud detection methodology can be tr
 
 Determine whether bank accounts demonstrate behavioural patterns consistent with fraud scenarios involving unauthorized access and fund extraction.
 
-> Important: the purpose of the project is not to prove fraud, but to **identify transactions with elevated risk indicators**.
+Important: the purpose of the project is not to prove fraud, but to **identify transactions with elevated risk indicators**.
 
 ---
 
